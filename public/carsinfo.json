@@ -1,0 +1,152 @@
+[
+    {
+        "id": "1",
+        "image": "car1.jpg",
+        "name": "Sedan 2024",
+        "doors": 4,
+        "category": "Sedan",
+        "passengers": 5,
+        "transmission": "Automatic",
+        "area": {
+            "address": "1234 Elm St",
+            "city": "Los Angeles"
+        },
+        "luggage": 3,
+        "price": 50
+    },
+    {
+        "id": "2",
+        "image": "car2.jpg",
+        "name": "SUV 2023",
+        "doors": 5,
+        "category": "SUV",
+        "passengers": 7,
+        "transmission": "Automatic",
+        "area": {
+            "address": "5678 Oak St",
+            "city": "San Francisco"
+        },
+        "luggage": 5,
+        "price": 75
+    },
+    {
+        "id": "3",
+        "image": "car3.jpg",
+        "name": "Hatchback 2022",
+        "doors": 4,
+        "category": "Hatchback",
+        "passengers": 4,
+        "transmission": "Manual",
+        "area": {
+            "address": "910 Maple St",
+            "city": "San Diego"
+        },
+        "luggage": 2,
+        "price": 40
+    },
+    {
+        "id": "4",
+        "image": "car4.jpg",
+        "name": "Convertible 2024",
+        "doors": 2,
+        "category": "Convertible",
+        "passengers": 2,
+        "transmission": "Automatic",
+        "area": {
+            "address": "1122 Birch St",
+            "city": "Miami"
+        },
+        "luggage": 1,
+        "price": 90
+    },
+    {
+        "id": "5",
+        "image": "car5.jpg",
+        "name": "Truck 2023",
+        "doors": 2,
+        "category": "Truck",
+        "passengers": 3,
+        "transmission": "Manual",
+        "area": {
+            "address": "3344 Pine St",
+            "city": "Austin"
+        },
+        "luggage": 4,
+        "price": 60
+    },
+    {
+        "id": "6",
+        "image": "car6.jpg",
+        "name": "Van 2024",
+        "doors": 5,
+        "category": "Van",
+        "passengers": 8,
+        "transmission": "Automatic",
+        "area": {
+            "address": "5566 Cedar St",
+            "city": "Seattle"
+        },
+        "luggage": 6,
+        "price": 85
+    },
+    {
+        "id": "7",
+        "image": "car7.jpg",
+        "name": "Coupe 2022",
+        "doors": 2,
+        "category": "Coupe",
+        "passengers": 2,
+        "transmission": "Automatic",
+        "area": {
+            "address": "7788 Spruce St",
+            "city": "Chicago"
+        },
+        "luggage": 1,
+        "price": 70
+    },
+    {
+        "id": "8",
+        "image": "car8.jpg",
+        "name": "Electric Sedan 2024",
+        "doors": 4,
+        "category": "Electric",
+        "passengers": 5,
+        "transmission": "Automatic",
+        "area": {
+            "address": "9900 Redwood St",
+            "city": "Denver"
+        },
+        "luggage": 3,
+        "price": 65
+    },
+    {
+        "id": "9",
+        "image": "car9.jpg",
+        "name": "Luxury SUV 2024",
+        "doors": 5,
+        "category": "Luxury",
+        "passengers": 6,
+        "transmission": "Automatic",
+        "area": {
+            "address": "2233 Ash St",
+            "city": "Boston"
+        },
+        "luggage": 4,
+        "price": 120
+    },
+    {
+        "id": "10",
+        "image": "car10.jpg",
+        "name": "Compact 2023",
+        "doors": 4,
+        "category": "Compact",
+        "passengers": 4,
+        "transmission": "Manual",
+        "area": {
+            "address": "4455 Willow St",
+            "city": "Phoenix"
+        },
+        "luggage": 2,
+        "price": 45
+    }
+]
