@@ -4,7 +4,7 @@ import Navbar from "./components/ui/Navbar.tsx";
 
 function App() {
   return  (
-    <section className="w-11/12 xl:w-10/12 mx-auto">
+    <section className="w-full">
       <Navbar />
       <Outlet />
       <Footer />

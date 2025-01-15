@@ -4,7 +4,7 @@ import FeaturedCarLayout from "./FeaturedCarLayout";
 
 const HomeLayout = () => {
     return (
-        <section className=" mx-auto">
+        <section className="mx-auto">
             {/* hero section */}
             <div className="relative flex items-center h-[calc(100vh-80px)] justify-center  bg-gray-100">
                 <img src="../../../../src/assets/images/man-parked-side-road.jpg" alt="" className="object-cover w-full h-full  max-h-screen contrast-[.9] brightness-[.4] "/>
@@ -17,9 +17,15 @@ const HomeLayout = () => {
                 </div>
             </div>
 
+            {/* featured cars */}
             <FeaturedCarLayout />
 
+            {/* search bar */}
+            {/* <div className="bouder w-full mx-auto px-2 py-10 lg:py-20">
+                
+            </div> */}
 
+            
         </section>
     );
 };

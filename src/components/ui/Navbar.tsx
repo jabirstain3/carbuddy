@@ -11,7 +11,7 @@ const Navbar = () => {
         <li><a className="hover:bg-scnd hover:text-based active:text-scnd" href="/" >Contact Us</a></li>
     </>
     return (
-        <div className="w-full navbar mx-auto px-0">
+        <div className="w-11/12 xl:w-10/12 mx-auto navbar px-0">
             <div className="navbar-start ">
                 <img src="../../src/assets/logo/carbuddyLight.png" alt="CarBuddy logo" className="w-24 dark:hidden" />
                 <img src="../../src/assets/logo/carbuddyDark.png" alt="CarBuddy logo" className="w-24 hidden dark:inline" />

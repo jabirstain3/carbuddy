@@ -1,6 +1,6 @@
 const Footer = () => {
     return (
-        <footer className="footer px-2 py-10 lg:py-20 ">
+        <footer className="footer w-11/12 xl:w-10/12 mx-auto px-2 py-10 lg:py-20 ">
             <aside>
                 <div className="border rounded-lg">
                     <img src="../../src/assets/logo/carbuddyLight.png" alt="CarBuddy logo" className="w-52 rounded-lg dark:hidden" />
