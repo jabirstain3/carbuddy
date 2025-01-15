@@ -46,7 +46,7 @@ const CarCard = ( ) => {
                 </div>
 
                 <div className=" mt-5 px-1 card-action flex justify-between align-center items-center">
-                    <p className=" max-w-fit h-fit text-2xl font-semibold text-scnd">${price}<span className="text-lg text-based dark:text-base">/day</span></p>
+                    <p className=" max-w-fit h-fit text-2xl font-semibold text-scnd">${price}<span className="text-lg text-based dark:text-basel">/day</span></p>
                     <button className="btn border-none rounded-full px-6 text-lg bg-scnd">Details</button>
                 </div>
             </div>

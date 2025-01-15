@@ -10,7 +10,7 @@ const Footer = () => {
                 <p>CARBUDDY Industries Ltd.<br />Providing reliable services since 1992</p>
             </aside>
 
-            <nav className="text-based dark:text-base font-medium text-lg">
+            <nav className="text-based dark:text-basel font-medium text-lg">
                 <h6 className="footer-title font-semibold text-xl">Services</h6>
 
                 <a className="link link-hover hover:text-scnd active:text-scnd" href="#">Car rental</a>
@@ -19,7 +19,7 @@ const Footer = () => {
                 <a className="link link-hover hover:text-scnd active:text-scnd" href="#">Route planing</a>
             </nav>
             
-            <nav className="text-based dark:text-base font-medium text-lg">
+            <nav className="text-based dark:text-basel font-medium text-lg">
                 <h6 className="footer-title font-semibold text-xl">Company</h6>
 
                 <a className="link link-hover hover:text-scnd active:text-scnd" href="/aboutus">About Us</a>
@@ -28,7 +28,7 @@ const Footer = () => {
                 <a className="link link-hover hover:text-scnd active:text-scnd" href="#">Contact Us</a>
             </nav>
 
-            <nav className="text-based dark:text-base font-medium text-lg">
+            <nav className="text-based dark:text-basel font-medium text-lg">
                 <h6 className="footer-title font-semibold text-xl">Legal</h6>
 
                 <a className="link link-hover hover:text-scnd active:text-scnd" href="#">Terms of use</a>

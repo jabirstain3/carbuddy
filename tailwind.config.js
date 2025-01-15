@@ -9,7 +9,7 @@ export default {
     extend: {},
     colors: {
       'scnd':"#f5b754",
-      'base':"#ffffff",
+      'basel':"#ffffff",
       'acn':"#5555553f",
       'based':"#000000",
     },
