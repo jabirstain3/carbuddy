@@ -9,7 +9,7 @@ const FeaturedCarLayout = () => {
     return (
         <div className="w-11/12 xl:w-10/12 mx-auto px-2 py-10 lg:py-20">
             <IntroText sectionHeader={sectionHeader} sectionText={sectionText} /> 
-            <div className="my-8 xl:my-10 flex flex-wrap justify-center gap-4 md:gap-6 xl:gap-8">
+            <div className="my-8 xl:my-10 flex flex-wrap justify-center gap-8">
                 {
                     fcars.map((car) => <CarCard key={car}/>)
                 }
