@@ -1,4 +1,5 @@
-import Button from "../../shearedComponent/button";
+import Button from "../../shearedComponent/Button";
+import Review from "../../ui/section/Review";
 import IntroText from "../../ui/section/IntroText";
 import FeaturedCarLayout from "./FeaturedCarLayout";
 
@@ -49,7 +50,16 @@ const HomeLayout = () => {
                     </div>
                 </div>
             </div>
-                </section>
+
+            {/* customer testimonials section */}
+            <div className="w-11/12 xl:w-10/12 mx-auto px-2 py-10 lg:py-20">
+                <IntroText sectionHeader="What Our Customers Are Saying About Us" sectionText="" />
+
+                <Review />
+
+            </div>
+
+        </section>
     );
 };
 

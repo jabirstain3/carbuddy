@@ -1,4 +1,4 @@
-import Button from "../../shearedComponent/button";
+import Button from "../../shearedComponent/Button";
 import CarCard from "../../ui/CarCard";
 import IntroText from "../../ui/section/IntroText";
 
