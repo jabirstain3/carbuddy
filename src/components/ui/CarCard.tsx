@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 
 const CarCard = ( ) => {
     const car = {"id": "1",
@@ -15,7 +16,13 @@ const CarCard = ( ) => {
         "price": 50
     }
 
-    const {name, image, catagory, passengers, transmission, luggage, area, price} = car;
+    const { id, name, image, catagory, passengers, transmission, luggage, area, price} = car;
+
+    const navigate = useNavigate();
+
+    const handalDetails = () => {
+        navigate(id)
+    }
 
     return (
         <div className="border card w-full min-w-52 max-w-96">
@@ -47,7 +54,7 @@ const CarCard = ( ) => {
 
                 <div className=" mt-5 px-1 card-action flex justify-between align-center items-center">
                     <p className=" max-w-fit h-fit text-2xl font-semibold text-scnd">${price}<span className="text-lg text-based dark:text-basel">/day</span></p>
-                    <button className="btn border-none rounded-full px-6 text-lg bg-scnd">Details</button>
+                    <button onClick={handalDetails} className="btn border-none rounded-full px-6 text-lg bg-scnd">Details</button>
                 </div>
             </div>
 </div>

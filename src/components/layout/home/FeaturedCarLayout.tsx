@@ -15,7 +15,7 @@ const FeaturedCarLayout = () => {
                 }
             </div>
             <div className=" w-fit mx-auto mt-8 lg:mt-12">
-                <Button btnText="More Option..." link="/cars" />
+                <Button btnText="More Cars..." link="/cars" />
             </div>
         </div>
     );

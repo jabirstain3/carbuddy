@@ -6,9 +6,9 @@ const Navbar = () => {
         <li><a className="hover:bg-scnd hover:text-based active:text-scnd" href="/">Home</a></li>
         {/* <li> <Link to="/about" className="hover:bg-scnd hover:text-based active:text-scnd">About Us</Link></li> */}
         <li><a className="hover:bg-scnd hover:text-based active:text-scnd" href="/aboutus" >About Us</a></li>
-        <li><a className="hover:bg-scnd hover:text-based active:text-scnd" href="/" >Cars</a></li>
+        <li><a className="hover:bg-scnd hover:text-based active:text-scnd" href="/cars" >Cars</a></li>
         <li><a className="hover:bg-scnd hover:text-based active:text-scnd" href="/" >Bokings</a></li>
-        <li><a className="hover:bg-scnd hover:text-based active:text-scnd" href="/" >Contact Us</a></li>
+        <li><a className="hover:bg-scnd hover:text-based active:text-scnd" href="/contactus" >Contact Us</a></li>
     </>
     return (
         <div className="w-11/12 xl:w-10/12 mx-auto navbar px-0">

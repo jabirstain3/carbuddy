@@ -2,6 +2,9 @@ import { createBrowserRouter } from "react-router-dom";
 import App from "../App";
 import HomeLayout from "../components/layout/home/HomeLayout";
 import AboutUsLayout from "../components/layout/aboutUs/AboutUsLayout";
+import CarlistingLayout from "../components/layout/carlistings/CarlistingLayout";
+import SingalCarLayout from "../components/layout/singalCar/SingalCarLayout";
+import Bookingpage from "../pages/bookingpage/bookingpage";
 
 const router = createBrowserRouter([
     {
@@ -17,12 +20,21 @@ const router = createBrowserRouter([
                 element: <AboutUsLayout/>,
             },
             {
-                path: "Contact",
+                path: "contactus",
                 element: <App />,
             },
             {
-                path: "Cars",
-                element: <App />,
+                path: "cars",
+                element: <CarlistingLayout />,
+            },
+            {
+                path: "/cars/:id",
+                element: <SingalCarLayout/>,
+                // loader: ({params}) => fetch(`${baseURL}/coffee/${params.id}`) 
+            },
+            {
+                path: "/booking",
+                element: <Bookingpage/>,
             },
         ],
     },

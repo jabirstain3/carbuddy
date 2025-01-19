@@ -23,9 +23,9 @@ const Footer = () => {
                 <h6 className="footer-title font-semibold text-xl">Company</h6>
 
                 <a className="link link-hover hover:text-scnd active:text-scnd" href="/aboutus">About Us</a>
-                <a className="link link-hover hover:text-scnd active:text-scnd" href="#">Cars</a>
+                <a className="link link-hover hover:text-scnd active:text-scnd" href="cars">Cars</a>
                 <a className="link link-hover hover:text-scnd active:text-scnd" href="#">Bookings</a>
-                <a className="link link-hover hover:text-scnd active:text-scnd" href="#">Contact Us</a>
+                <a className="link link-hover hover:text-scnd active:text-scnd" href="/contactus">Contact Us</a>
             </nav>
 
             <nav className="text-based dark:text-basel font-medium text-lg">

@@ -19,13 +19,13 @@ const HomeLayout = () => {
                 </div>
             </div>
 
-            {/* featured cars */}
-            <FeaturedCarLayout />
-
             {/* search bar */}
             {/* <div className="bouder w-full mx-auto px-2 py-10 lg:py-20">
                 
             </div> */}
+
+            {/* featured cars */}
+            <FeaturedCarLayout />
 
             {/* Why Choose Us section */}
             <div className="w-full px-2 py-10 lg:py-20 bg-acn ">
@@ -56,9 +56,7 @@ const HomeLayout = () => {
                 <IntroText sectionHeader="What Our Customers Are Saying About Us" sectionText="" />
 
                 <Review />
-
             </div>
-
         </section>
     );
 };
