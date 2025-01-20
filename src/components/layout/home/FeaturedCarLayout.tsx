@@ -11,7 +11,7 @@ const FeaturedCarLayout = () => {
             <IntroText sectionHeader={sectionHeader} sectionText={sectionText} /> 
             <div className="my-8 xl:my-10 flex flex-wrap justify-center gap-8">
                 {
-                    fcars.map((car) => <CarCard key={car}/>)
+                    fcars.map((car) => <CarCard key={car} base={"/cars"}/>)
                 }
             </div>
             <div className=" w-fit mx-auto mt-8 lg:mt-12">

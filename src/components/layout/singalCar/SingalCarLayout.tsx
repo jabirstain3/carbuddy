@@ -78,7 +78,7 @@ const SingalCarLayout = () => {
 
     return (
         <div className=" w-11/12 xl:w-10/12 max-w-5xl mx-auto px-2 my-10 ">
-            <div className="border w-full mx-auto">
+            <div className=" w-full mx-auto">
                 <img src={image} alt={name} className="rounded-xl"/>
             </div>
             <div className="mt-10">
@@ -100,7 +100,7 @@ const SingalCarLayout = () => {
                 <div>
                     <h4 className="my-4 text-2xl font-semibold">Details</h4>
 
-                    <div className="divider"></div>
+                    <div className="divider divider-neutral"></div>
 
                     <div className="text-lg mb-6 grid grid-rows-1 md:grid-rows-5 grid-flow-col gap-2">
                         <p>Drive: <span className="font-medium">{drive}</span></p>
@@ -117,7 +117,7 @@ const SingalCarLayout = () => {
                 <div>
                     <h4 className="my-4 text-2xl font-semibold">Features</h4>
 
-                    <div className="divider"></div>
+                    <div className="divider divider-neutral"></div>
 
                     <div className="text-lg  grid grid-rows-1 md:grid-rows-3 grid-flow-col gap-2">
                         { features.map((feature, index) => 
@@ -132,7 +132,7 @@ const SingalCarLayout = () => {
                 <div>
                     <h4 className="my-4 text-2xl font-semibold">Aditional Features To Choose</h4>
 
-                    <div className="divider"></div>
+                    <div className="divider divider-neutral"></div>
 
                     <div className="text-lg  grid grid-cols-1 md:grid-cols-2 gap-2">
                         { addfeatures.map((addfeature, index) => <div key={index} className="flex gap-2">
@@ -150,7 +150,7 @@ const SingalCarLayout = () => {
                         filterDate={(date) => !isDateDisabled(date)} 
                         placeholderText="yyyy-MM-dd"
                         dateFormat="yyyy-MM-dd"
-                        className="border rounded-lg p-2 text-base"
+                        className="border rounded-lg p-2 text-base text-based "
                     />
                     {selectedDate && (
                         <p>

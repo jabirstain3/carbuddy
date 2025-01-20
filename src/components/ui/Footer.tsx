@@ -31,8 +31,8 @@ const Footer = () => {
             <nav className="text-based dark:text-basel font-medium text-lg">
                 <h6 className="footer-title font-semibold text-xl">Legal</h6>
 
-                <a className="link link-hover hover:text-scnd active:text-scnd" href="#">Terms of use</a>
-                <a className="link link-hover hover:text-scnd active:text-scnd" href="#">Privacy policy</a>
+                <a className="link link-hover hover:text-scnd active:text-scnd" href="/termsofservice">Terms of service</a>
+                <a className="link link-hover hover:text-scnd active:text-scnd" href="/privacypolicy">Privacy policy</a>
                 <a className="link link-hover hover:text-scnd active:text-scnd" href="#">Cookie policy</a>
             </nav>
         </footer>

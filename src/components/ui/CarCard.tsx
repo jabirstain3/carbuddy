@@ -1,6 +1,11 @@
 import { useNavigate } from "react-router-dom";
 
-const CarCard = ( ) => {
+
+interface CarCardProps {
+    base: string;
+}
+
+const CarCard: React.FC<CarCardProps> = ( { base }) => {
     const car = {"id": "1",
         "image": "https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp",
         "name": "Sedan 2024",
@@ -21,7 +26,10 @@ const CarCard = ( ) => {
     const navigate = useNavigate();
 
     const handalDetails = () => {
-        navigate(id)
+        if (base === ""){
+            navigate(id)
+        }
+        else navigate(`${base}/${id}`)
     }
 
     return (

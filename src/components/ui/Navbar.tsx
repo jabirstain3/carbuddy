@@ -23,7 +23,7 @@ const Navbar = () => {
             </div>
             <div className="navbar-end">
                 <ul className="menu menu-horizontal gap-2 items-center text-based dark:text-basel font-medium text-lg">
-                    <li className="hidden md:inline border rounded-lg"><a className="hover:bg-scnd">Log In</a></li>
+                    <li className="hidden md:inline border rounded-lg"><a className="hover:bg-scnd" href="/login">Log In</a></li>
                     <li ><ThemeProvider/></li>
                 </ul>
                 <details className="dropdown dropdown-end">
@@ -34,7 +34,7 @@ const Navbar = () => {
                     </summary>
 
                     <ul tabIndex={0} className="menu dropdown-content font-medium mt-3 bg-acn rounded-box z-[1] w-36 p-2 shadow">
-                        <li><a className="hover:bg-scnd hover:text-based active:text-scnd md:hidden" href="/" >Log In</a></li>
+                        <li><a className="hover:bg-scnd hover:text-based active:text-scnd md:hidden" href="/login" >Log In</a></li>
                         {manu}
                     </ul>
                 </details>

@@ -5,6 +5,8 @@ import AboutUsLayout from "../components/layout/aboutUs/AboutUsLayout";
 import CarlistingLayout from "../components/layout/carlistings/CarlistingLayout";
 import SingalCarLayout from "../components/layout/singalCar/SingalCarLayout";
 import Bookingpage from "../pages/bookingpage/bookingpage";
+import LogInPage from "../pages/loginpage/LogInPage";
+import SignUpPage from "../pages/singuppage/SignUpPage";
 
 const router = createBrowserRouter([
     {
@@ -38,6 +40,7 @@ const router = createBrowserRouter([
             },
         ],
     },
+
     {
         path: "/admin",
         element: <App />,
@@ -52,12 +55,33 @@ const router = createBrowserRouter([
             },
         ],
     },
+
     {
         path: "/login",
+        element: <LogInPage/>,
+    },
+
+    {
+        path: "/signup",
+        element: <SignUpPage />,
+    },
+
+    {
+        path: "/termcandcondition",
         element: <App />,
     },
     {
-        path: "/signup",
+        path: "/termsofservice",
+        element: <App />,
+    },
+
+    {
+        path: "/privacypolicy",
+        element: <App />,
+    },
+
+    {
+        path: "/resetpassword",
         element: <App />,
     },
 ]);
