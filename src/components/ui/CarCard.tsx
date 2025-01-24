@@ -1,35 +1,22 @@
 import { useNavigate } from "react-router-dom";
+import { TCar } from "../../types";
 
 
 interface CarCardProps {
     base: string;
+    car: TCar
 }
 
-const CarCard: React.FC<CarCardProps> = ( { base }) => {
-    const car = {"id": "1",
-        "image": "https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp",
-        "name": "Sedan 2024",
-        "doors": 4,
-        "catagory": "Sedan",
-        "passengers": 5,
-        "transmission": "Automatic",
-        "area": {
-            "address": "1234 Elm St",
-            "city": "Los Angeles"
-        },
-        "luggage": 3,
-        "price": 50
-    }
-
-    const { id, name, image, catagory, passengers, transmission, luggage, area, price} = car;
-
+const CarCard: React.FC<CarCardProps> = ( { base, car}) => {
     const navigate = useNavigate();
+
+    const { _id:id, name, image, category, passengers, transmission, luggage, area, price} = car;
 
     const handalDetails = () => {
         if (base === ""){
-            navigate(id)
+            navigate( id, {state: car} )
         }
-        else navigate(`${base}/${id}`)
+        else navigate( `${base}/${id}`, {state: car} )
     }
 
     return (
@@ -38,7 +25,7 @@ const CarCard: React.FC<CarCardProps> = ( { base }) => {
                 <img src={image} alt={name} className="w-full aspect-[5/3]"/>
             </figure>
             <div className="card-body">
-                <h2 className= " card-title text-2xl font-semibold">{name}&ensp;<div className="badge bg-scnd border-none">{catagory}</div></h2>
+                <h2 className= " card-title text-2xl font-semibold">{name}&ensp;<div className="badge bg-scnd border-none">{category}</div></h2>
 
                 <div className="w-full card-subtitle flex justify-between">
                     <p className=" text-left">Passengers</p>

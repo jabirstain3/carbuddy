@@ -2,15 +2,23 @@ import { useState } from "react";
 import CarCard from "../../ui/CarCard";
 import IntroText from "../../ui/section/IntroText";
 import ReactPaginate from 'react-paginate';
+import { useGetAllCarsQuery } from "../../../redux/api/BaseApi";
+import { TCar } from "../../../types";
 
-// const style = {
-// }
 
-const CarlistingLayout = () => {
-    const allCars = [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18 ]
-
+const CarlistingLayout = () => {    
     const [carOffset, setCarOffset ] = useState(0);
 
+    const { data, isLoading } = useGetAllCarsQuery({})
+    // console.log(data);
+
+    if (isLoading){
+        return <p>Loading...</p>
+    }
+
+    const { data: allCars } = data
+    // console.log(allCars);
+    
     const maxCars = 9;
 
     const endOffset = carOffset + maxCars;
@@ -33,15 +41,16 @@ const CarlistingLayout = () => {
                 </div>
             </div>
 
-            {/*  */}
+            {/* Car card showcase */}
             <div className=" w-11/12 xl:w-10/12 mx-auto px-2 py-10 lg:py-20">
                 <div className=" w-fit mx-auto my-8 xl:my-10 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 justify-items-center content-center">
                     {
-                        currentCars.map((car) => <CarCard key={car} base={''}/>)
+                        currentCars.map((car:TCar) => <CarCard key={car?._id} base={''} car={car}/>)
                     }
                 </div>
             </div>
-
+            
+            {/* Pagination */}
             <div className=" w-11/12 xl:w-10/12 mx-auto">
                 <ReactPaginate  breakLabel="..." nextLabel="next >" onPageChange={handlePageClick} pageRangeDisplayed={5} pageCount={pageCount} previousLabel="< previous" renderOnZeroPageCount={null} activeClassName="active" disableInitialCallback={true} className="page w-fit mx-auto flex gap-4 "/>
             </div>

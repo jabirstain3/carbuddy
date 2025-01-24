@@ -3,20 +3,17 @@ const ReviewCard = () => {
     const cReview = {
         "id": "1523",
         "name": "Jeni",
+        "rating":3,
         "image": "../../../../src/assets/images/pretty-profile-pictures-2tkqwa8t2rolierf.jpg",
         "address": "los angelus",
         "reviewText": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Architecto ullam corrupti ex sapiente",
     }
-    const { id, name, image, address, reviewText } = cReview
+    const { id, name, rating, image, address, reviewText } = cReview
 
     return (
         <div key={id} className=" carousel-item w-[300px]  h-[300px] rounded-box bg-scnd  flex-col my-3 mx-auto md:mx-3">
-            <div className="rating mx-4 mt-6">
-                <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
-                <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
-                <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
-                <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
-                <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" defaultChecked />
+            <div className="rating mx-5 mt-6 ">
+                <p className="font-bold text-3xl text-right">{rating}<span className="text-3xl font-semibold">/10</span> <input type="radio" name="rating-2" className="mask mask-star-2" checked readOnly/></p>
             </div>
 
             <p className=" m-4 h-[100px]">{reviewText}</p>
