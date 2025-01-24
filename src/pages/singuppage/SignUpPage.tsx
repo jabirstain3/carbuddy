@@ -6,10 +6,17 @@ const SignUpPage = () => {
         e.preventDefault();
         // console.log(e);
 
-        const name = e.target.name.value;
-        const email = e.target.email.value;
-        const password = e.target.password.value;
-        const phone = e.target.phonenumber?.value;
+        const target = e.target as typeof e.target & {
+            email: { value: string };
+            password: { value: string };
+            name: { value: string };
+            phonenumber: { value: string };
+        };
+
+        const name = target.name.value;
+        const email = target.email.value;
+        const password = target.password.value;
+        const phone = target.phonenumber?.value;
         const user = {name, email, password, phone};
         console.log(user);
     }

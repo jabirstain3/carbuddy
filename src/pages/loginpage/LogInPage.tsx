@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 
-const LogInPage = () => {
+const LogInPage: React.FC = () => {
     const [show, setShow] = useState(false)
     const navigate = useNavigate();
 
@@ -9,12 +9,18 @@ const LogInPage = () => {
         e.preventDefault();
         // console.log(e);
         
-        const email = e.target.email.value;
-        const password = e.target.password.value;
+        const target = e.target as typeof e.target & {
+            email: { value: string };
+            password: { value: string };
+        };
+
+        const email: string = target.email.value;
+        const password = target.password.value;
         const usre = {email, password};
         console.log(usre);
 
-        navigate('/')
+        const userName = "jabirstain3"
+        navigate(`/${userName}`, {state: userName})
     }
     return (
         <div className=" w-11/12 xl:w-10/12 mx-auto h-screen flex flex-col justify-center items-center">

@@ -7,6 +7,10 @@ import SingalCarLayout from "../components/layout/singalCar/SingalCarLayout";
 import Bookingpage from "../pages/bookingpage/bookingpage";
 import LogInPage from "../pages/loginpage/LogInPage";
 import SignUpPage from "../pages/singuppage/SignUpPage";
+import User from "../pages/userpage/User";
+import UserInfoLayout from "../components/layout/userinfo/UserInfoLayout";
+import UserManageBookingLayout from "../components/layout/userManageBooking/UserManageBookingLayout";
+import UserManagePaymentLayout from "../components/layout/userManagePayment/UserManagePaymentLayout";
 
 const router = createBrowserRouter([
     {
@@ -17,44 +21,56 @@ const router = createBrowserRouter([
                 path: "",
                 element: <HomeLayout />,
             },
+
             {
                 path: "aboutus",
                 element: <AboutUsLayout/>,
             },
+
             {
                 path: "contactus",
                 element: <App />,
             },
+
             {
                 path: "cars",
                 element: <CarlistingLayout />,
             },
+
             {
                 path: "/cars/:id",
                 element: <SingalCarLayout/>,
                 // loader: ({params}) => fetch(`${baseURL}/coffee/${params.id}`) 
             },
+
             {
                 path: "/booking",
                 element: <Bookingpage/>,
             },
+
+            {
+                path: "/:userName",
+                element: <User />,
+                children: [
+                    {
+                        path: "",
+                        element: <UserInfoLayout />,
+                    },
+
+                    {
+                        path: "booking",
+                        element: <UserManageBookingLayout />,
+                    },
+
+                    {
+                        path: "payment",
+                        element: <UserManagePaymentLayout />,
+                    },
+                ]
+            },
         ],
     },
 
-    {
-        path: "/admin",
-        element: <App />,
-        children: [
-            {
-                path: "create",
-                element: <App />,
-            },
-            {
-                path: "history",
-                element: <App />,
-            },
-        ],
-    },
 
     {
         path: "/login",
@@ -83,6 +99,21 @@ const router = createBrowserRouter([
     {
         path: "/resetpassword",
         element: <App />,
+    },
+
+    {
+        path: "/admin",
+        element: <App />,
+        children: [
+            {
+                path: "create",
+                element: <App />,
+            },
+            {
+                path: "history",
+                element: <App />,
+            },
+        ],
     },
 ]);
 
