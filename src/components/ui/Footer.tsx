@@ -1,6 +1,6 @@
 const Footer = () => {
     return (
-        <footer className="footer w-11/12 xl:w-10/12 mx-auto px-2 py-10 lg:py-20 ">
+        <footer className="footer w-11/12 xl:w-10/12 mx-auto px-2 py-10 lg:py-20">
             <aside>
                 <div className="border rounded-lg">
                     <img src="../../src/assets/logo/carbuddyLight.png" alt="CarBuddy logo" className="w-52 rounded-lg dark:hidden" />
@@ -23,7 +23,7 @@ const Footer = () => {
                 <h6 className="footer-title font-semibold text-xl">Company</h6>
 
                 <a className="link link-hover hover:text-scnd active:text-scnd" href="/aboutus">About Us</a>
-                <a className="link link-hover hover:text-scnd active:text-scnd" href="cars">Cars</a>
+                <a className="link link-hover hover:text-scnd active:text-scnd" href="/cars">Cars</a>
                 <a className="link link-hover hover:text-scnd active:text-scnd" href="#">Bookings</a>
                 <a className="link link-hover hover:text-scnd active:text-scnd" href="/contactus">Contact Us</a>
             </nav>

@@ -8,6 +8,9 @@ function App() {
       <Navbar />
       <Outlet />
       <Footer />
+      <div className="border-t w-full px-6 py-3 ">
+        <p className="w-fit mx-auto text-sm text-center">©2023 | ALL COPYRIGHT RESERVE BY CARBUDDY LTD. | DEVELOPED BY AL JABIR</p>
+      </div>
     </section>
   );
 }

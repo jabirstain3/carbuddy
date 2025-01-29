@@ -23,7 +23,7 @@ const SignUpPage = () => {
 
     return (
         <div className=" w-11/12 xl:w-10/12 h-screen mx-auto flex flex-col justify-center items-center">
-            <form className="grid gap-4 w-fit mx-auto my-12 px-20 lg:px-28 py-14 rounded-2xl bg-[#f1ddbf] shadow-2xl"onSubmit={HandelSignUp}>
+            <form className="grid gap-4 w-fit mx-auto my-12 px-20 lg:px-28 py-14 rounded-2xl bg-acn shadow-2xl"onSubmit={HandelSignUp}>
                 <h1 className="text-4xl text-center font-bold mb-4">Sign Up</h1>
                 <input className="border rounded-md px-2 py-1" type="text" name="name" placeholder="User Name..." required />
                 <input className="border rounded-md px-2 py-1" type="email" name="email" placeholder="Email..."required />

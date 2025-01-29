@@ -24,7 +24,7 @@ const LogInPage: React.FC = () => {
     }
     return (
         <div className=" w-11/12 xl:w-10/12 mx-auto h-screen flex flex-col justify-center items-center">
-            <form className="grid gap-4 w-fit mx-auto my-12 px-20 py-14 rounded-2xl bg-[#f1ddbf] shadow-2xl" onSubmit={HandelLogIn}>
+            <form className="grid gap-4 w-fit mx-auto my-12 px-20 py-14 rounded-2xl bg-acn shadow-2xl" onSubmit={HandelLogIn}>
                 <h1 className="text-4xl text-center font-bold mb-4">Log In</h1>
                 <input className="border rounded-md px-2 py-1" type="email" name="email" placeholder="Email..."required />
                 <div className="relative">

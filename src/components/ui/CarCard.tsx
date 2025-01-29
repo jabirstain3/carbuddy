@@ -20,12 +20,14 @@ const CarCard: React.FC<CarCardProps> = ( { base, car}) => {
     }
 
     return (
-        <div className="border card w-full min-w-52 max-w-96">
+        <div className="border card w-full min-w-64 lg: max-w-96">
             <figure>
                 <img src={image} alt={name} className="w-full aspect-[5/3]"/>
             </figure>
             <div className="card-body">
-                <h2 className= " card-title text-2xl font-semibold">{name}&ensp;<div className="badge bg-scnd border-none">{category}</div></h2>
+                <h2 className= "card-title text-2xl font-semibold">{name}</h2>
+                
+                <div className="badge bg-scnd border-none">{category}</div>
 
                 <div className="w-full card-subtitle flex justify-between">
                     <p className=" text-left">Passengers</p>

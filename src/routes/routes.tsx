@@ -18,22 +18,22 @@ const router = createBrowserRouter([
         element: <App />,
         children: [
             {
-                path: "",
+                path: "/",
                 element: <HomeLayout />,
             },
 
             {
-                path: "aboutus",
+                path: "/aboutus",
                 element: <AboutUsLayout/>,
             },
 
             {
-                path: "contactus",
+                path: "/contactus",
                 element: <App />,
             },
 
             {
-                path: "cars",
+                path: "/cars",
                 element: <CarlistingLayout />,
             },
 
