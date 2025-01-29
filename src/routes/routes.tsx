@@ -17,33 +17,33 @@ const router = createBrowserRouter([
         element: <App />,
         children: [
             {
-                path: "/",
+                path: "",
                 element: <HomeLayout />,
             },
 
             {
-                path: "/aboutus",
+                path: "aboutus",
                 element: <AboutUsLayout/>,
             },
 
             {
-                path: "/contactus",
+                path: "contactus",
                 element: <App />,
             },
 
             {
-                path: "/cars",
+                path: "cars",
                 element: <CarlistingLayout />,
             },
 
             {
-                path: "/cars/:id",
+                path: "cars/:id",
                 element: <SingalCarLayout/>,
                 // loader: ({params}) => fetch(`${baseURL}/coffee/${params.id}`) 
             },
 
             {
-                path: "/:userName",
+                path: ":userName",
                 element: <User />,
                 children: [
                     {
