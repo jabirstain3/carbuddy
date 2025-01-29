@@ -4,7 +4,6 @@ import HomeLayout from "../components/layout/home/HomeLayout";
 import AboutUsLayout from "../components/layout/aboutUs/AboutUsLayout";
 import CarlistingLayout from "../components/layout/carlistings/CarlistingLayout";
 import SingalCarLayout from "../components/layout/singalCar/SingalCarLayout";
-import Bookingpage from "../pages/bookingpage/bookingpage";
 import LogInPage from "../pages/loginpage/LogInPage";
 import SignUpPage from "../pages/singuppage/SignUpPage";
 import User from "../pages/userpage/User";
@@ -44,26 +43,21 @@ const router = createBrowserRouter([
             },
 
             {
-                path: "/booking",
-                element: <Bookingpage/>,
-            },
-
-            {
                 path: "/:userName",
                 element: <User />,
                 children: [
                     {
-                        path: "",
+                        path: "/",
                         element: <UserInfoLayout />,
                     },
 
                     {
-                        path: "booking",
+                        path: "/booking",
                         element: <UserManageBookingLayout />,
                     },
 
                     {
-                        path: "payment",
+                        path: "/payment",
                         element: <UserManagePaymentLayout />,
                     },
                 ]

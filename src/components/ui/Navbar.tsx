@@ -7,7 +7,7 @@ const Navbar = () => {
         {/* <li> <Link to="/about" className="hover:bg-scnd hover:text-based active:text-scnd">About Us</Link></li> */}
         <li><a className="hover:bg-scnd hover:text-based active:text-scnd" href="/aboutus" >About Us</a></li>
         <li><a className="hover:bg-scnd hover:text-based active:text-scnd" href="/cars" >Cars</a></li>
-        <li><a className="hover:bg-scnd hover:text-based active:text-scnd" href="/" >Bokings</a></li>
+        <li><a className="hover:bg-scnd hover:text-based active:text-scnd" href="/:userName/Booking" >Bookings</a></li>
         <li><a className="hover:bg-scnd hover:text-based active:text-scnd" href="/contactus" >Contact Us</a></li>
     </>
     return (
