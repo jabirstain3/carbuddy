@@ -52,12 +52,12 @@ const router = createBrowserRouter([
                     },
 
                     {
-                        path: "/booking",
+                        path: "booking",
                         element: <UserManageBookingLayout />,
                     },
 
                     {
-                        path: "/payment",
+                        path: "payment",
                         element: <UserManagePaymentLayout />,
                     },
                 ]
