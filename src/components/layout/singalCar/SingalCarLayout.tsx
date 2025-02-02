@@ -41,7 +41,7 @@ const SingalCarLayout = () => {
     };
 
     const handalBooking = () => {
-        nvigate("/booking", {state: bookingDetails})
+        nvigate(`/${id}/booking`, {state: bookingDetails})
     }
     const bookingDetails = {
         "carid": id,

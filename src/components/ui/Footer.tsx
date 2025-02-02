@@ -1,11 +1,13 @@
+import carbuddyLight from "/src/assets/logo/carbuddyLight.png"
+import carbuddyDark from "/src/assets/logo/carbuddyDark.png"
 const Footer = () => {
     return (
         <footer className="footer w-11/12 xl:w-10/12 mx-auto px-2 py-10 lg:py-20">
             <aside>
                 <div className="border rounded-lg">
-                    <img src="../../src/assets/logo/carbuddyLight.png" alt="CarBuddy logo" className="w-52 rounded-lg dark:hidden" />
+                    <img src={carbuddyLight} alt="CarBuddy logo" className="w-52 rounded-lg dark:hidden" />
 
-                    <img src="../../src/assets/logo/carbuddyDark.png" alt="CarBuddy logo" className="w-52 hidden rounded-lg dark:inline" />
+                    <img src={carbuddyDark} alt="CarBuddy logo" className="w-52 hidden rounded-lg dark:inline" />
                 </div>
                 <p>CARBUDDY Industries Ltd.<br />Providing reliable services since 1992</p>
             </aside>

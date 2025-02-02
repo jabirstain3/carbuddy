@@ -22,8 +22,8 @@ const CarlistingLayout = () => {
     const maxCars = 12;
 
     const endOffset = carOffset + maxCars;
-    const currentCars = allCars.slice( carOffset, endOffset );
-    const pageCount = Math.ceil(allCars.length/ maxCars);
+    const currentCars = allCars?.slice( carOffset, endOffset );
+    const pageCount = Math.ceil(allCars?.length/ maxCars);
 
     const handlePageClick = ( e: { selected: number } ) =>{
         const newOffset = (e.selected * maxCars) % allCars.length;

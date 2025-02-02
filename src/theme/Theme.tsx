@@ -1,45 +1,3 @@
-// import { useEffect, useState } from 'react';
-
-// const getSystemTheme = () =>
-//     window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-
-// const ThemeProvider = () => {
-//     const [theme, setTheme] = useState(() => {
-//         const savedTheme = localStorage.getItem('theme');
-//         return savedTheme || 'system'; // Default to system if no preference is saved
-//     });
-
-//     useEffect(() => {
-//         const root = document.documentElement;
-
-//         if (theme === 'system') {
-//             const systemTheme = getSystemTheme();
-//             root.classList.toggle('dark', systemTheme === 'dark');
-//         } else {
-//             root.classList.toggle('dark', theme === 'dark');
-//         }
-
-//         if (theme !== 'system') {
-//             localStorage.setItem('theme', theme);
-//         }
-//     }, [theme]);
-
-//     return (
-//         <div className="flex items-center justify-center h-screen">
-//             <div>
-//                 <p className="text-lg font-semibold mb-4">Current Theme: {theme === 'system' ? `System (${getSystemTheme()})` : theme}</p>
-//                 <div className="flex space-x-2">
-//                     <button onClick={() => setTheme('light')} className="px-4 py-2 bg-gray-200 rounded hover:bg-gray-300">Light Mode</button>
-//                     <button onClick={() => setTheme('dark')} className="px-4 py-2 bg-gray-800 text-white rounded hover:bg-gray-700">Dark Mode</button>
-//                     <button onClick={() => setTheme('system')} className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">System Mode</button>
-//                 </div>
-//             </div>
-//         </div>
-//     );
-// }
-
-// export default ThemeProvider;
-
 
 import { useEffect, useState } from 'react';
 
@@ -69,8 +27,8 @@ const ThemeProvider: React.FC = () => {
 
     return (
         <div className="dropdown dropdown-bottom dropdown-end p-0 rounded-full">
-            <div tabIndex={0} role='button' className="btn p-3 bg-basel dark:bg-baseld border rounded-full border-based dark:border-base hover:bg-scnd dark:hover:bg-scnd">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="size-6 hidden  dark:inline  text-base">
+            <div tabIndex={0} role='button' className="btn p-3 bg-basel dark:bg-based  border rounded-full border-based dark:border-basel hover:bg-scnd dark:hover:bg-scnd ">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="size-6 hidden text-basel dark:inline text-base">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z" />
                 </svg>  
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="size-6 dark:hidden">

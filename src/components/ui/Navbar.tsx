@@ -1,5 +1,7 @@
 // import { Link } from "react-router";
 import ThemeProvider from "../../theme/Theme";
+import carbuddyLight from "/src/assets/logo/carbuddyLight.png"
+import carbuddyDark from "/src/assets/logo/carbuddyDark.png"
 
 const Navbar = () => {
     const manu = <>
@@ -13,8 +15,8 @@ const Navbar = () => {
     return (
         <div className="w-11/12 xl:w-10/12 mx-auto navbar px-0">
             <div className="navbar-start ">
-                <img src="../../src/assets/logo/carbuddyLight.png" alt="CarBuddy logo" className="w-24 dark:hidden" />
-                <img src="../../src/assets/logo/carbuddyDark.png" alt="CarBuddy logo" className="w-24 hidden dark:inline" />
+                <img src={carbuddyLight} alt="CarBuddy logo" className="w-24 dark:hidden" />
+                <img src={carbuddyDark} alt="CarBuddy logo" className="w-24 hidden dark:inline" />
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1 text-based dark:text-basel font-medium text-lg">
