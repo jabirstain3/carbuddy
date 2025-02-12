@@ -2,6 +2,7 @@ import { useGetAllCarsQuery } from "../../../redux/api/BaseApi";
 import { TCar } from "../../../types";
 import Button from "../../shearedComponent/Button";
 import CarCard from "../../ui/CarCard";
+import Loader from "../../ui/Loader";
 import IntroText from "../../ui/section/IntroText";
 
 const FeaturedCarLayout = () => {
@@ -11,7 +12,7 @@ const FeaturedCarLayout = () => {
     // console.log(data);
 
     if (isLoading){
-        return <p>Loading...</p>
+        return <Loader/>
     }
 
     const { data: allCars } = data

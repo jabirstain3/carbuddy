@@ -1,13 +1,20 @@
+import avatericn from "../../../src/assets/images/pretty-profile-pictures-2tkqwa8t2rolierf.jpg"
+import Loader from "./Loader";
 
 const ReviewCard = () => {
     const cReview = {
         "id": "1523",
         "name": "Jeni",
         "rating":3,
-        "image": "../../../../src/assets/images/pretty-profile-pictures-2tkqwa8t2rolierf.jpg",
+        "image": avatericn,
         "address": "los angelus",
         "reviewText": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Architecto ullam corrupti ex sapiente",
     }
+
+    // if( isLoading ){
+    //     return <Loader/>
+    // }
+
     const { id, name, rating, image, address, reviewText } = cReview
 
     return (
