@@ -20,7 +20,7 @@ const HomeLayout = () => {
             </div>
 
             {/* search bar */}
-            {/* <div className="bouder w-full mx-auto px-2 py-10 lg:py-20">
+            {/* <div className="bouder w-full mx-auto px-2 py-10 md:py-14 lg:py-20">
                 
             </div> */}
 
@@ -28,7 +28,7 @@ const HomeLayout = () => {
             <FeaturedCarLayout />
 
             {/* Why Choose Us section */}
-            <div className="w-full px-2 py-10 lg:py-20 bg-acn ">
+            <div className="w-full px-2 py-10 md:py-14 lg:py-20 bg-acn ">
                 <div className="w-11/12 xl:w-10/12 max-w-4xl mx-auto text-center">
                     <IntroText sectionHeader="Why Choose Us?" sectionText="Your trusted partner in reliable car rental" />
 
@@ -52,7 +52,7 @@ const HomeLayout = () => {
             </div>
 
             {/* customer testimonials section */}
-            <div className="w-11/12 xl:w-10/12 mx-auto px-2 py-10 lg:py-20">
+            <div className="w-11/12 xl:w-10/12 mx-auto px-2 py-10 md:py-14 lg:py-20">
                 <IntroText sectionHeader="What Our Customers Are Saying About Us" sectionText="" />
 
                 <Review />
