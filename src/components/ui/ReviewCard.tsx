@@ -1,5 +1,5 @@
-import avatericn from "../../../src/assets/images/pretty-profile-pictures-2tkqwa8t2rolierf.jpg"
-import Loader from "./Loader";
+import avatericn from "/src/assets/images/pretty-profile-pictures-2tkqwa8t2rolierf.jpg"
+// import Loader from "./Loader";
 
 const ReviewCard = () => {
     const cReview = {

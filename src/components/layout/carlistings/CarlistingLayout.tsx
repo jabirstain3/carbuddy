@@ -1,6 +1,6 @@
 
 import IntroText from "../../ui/section/IntroText";
-import car from "../../../../src/assets/images/man-parked-side-road.jpg"
+import car from "/src/assets/images/man-parked-side-road.jpg"
 import { CarShowcase } from "../../ui/Carshowcase";
 
 
