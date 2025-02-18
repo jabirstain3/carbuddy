@@ -1,34 +1,52 @@
 import { useState } from "react";
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink, } from "react-router-dom";
+import { useForm, SubmitHandler } from "react-hook-form"
+import { useLoginMutation } from "../../redux/features/auth/authApi";
+import tokenVerify from "../../utils/tokenVerify";
+import { useAppDispatch } from "../../redux/hooks";
+import { setIUser } from "../../redux/features/auth/authSlice";
+
+interface FormData {
+    email: string;
+    password: string;
+}
 
 const LogInPage: React.FC = () => {
+    const dispatch = useAppDispatch()
     const [show, setShow] = useState(false)
-    const navigate = useNavigate();
+    const { register, handleSubmit } = useForm({
+        defaultValues: {
+            email: "jabir@gmail.com",
+            password: "181jjjjj34222amna",
+        }
+    })
+    const [ login, { error } ] = useLoginMutation()
+    console.log(error);
 
-    const HandelLogIn = ( e: React.FormEvent<HTMLFormElement> ) => {
-        e.preventDefault();
-        // console.log(e);
-        
-        const target = e.target as typeof e.target & {
-            email: { value: string };
-            password: { value: string };
-        };
+    const onSubmit: SubmitHandler<FormData> = async (data) => {
+        // console.log(data)
+        const userinfo ={
+            email: data.email,
+            password: data.password,
+        }
 
-        const email: string = target.email.value;
-        const password = target.password.value;
-        const usre = {email, password};
-        console.log(usre);
+        const res = await login(userinfo).unwrap();
+        console.log(res.data);
+        const user = tokenVerify(res.data);
+        console.log(user);
+        dispatch(setIUser({
+            user: user,
+            token: res.data,
+        }))
 
-        const userName = "jabirstain3"
-        navigate(`/${userName}`, {state: userName})
     }
     return (
         <div className=" w-11/12 xl:w-10/12 mx-auto h-screen flex flex-col justify-center items-center">
-            <form className="grid gap-4 w-fit mx-auto my-12 px-20 py-14 rounded-2xl bg-acn shadow-2xl" onSubmit={HandelLogIn}>
+            <form className="grid gap-4 w-fit mx-auto my-12 px-20 py-14 rounded-2xl bg-acn shadow-2xl" onSubmit={handleSubmit(onSubmit)}>
                 <h1 className="text-4xl text-center font-bold mb-4">Log In</h1>
-                <input className="border rounded-md px-2 py-1" type="email" name="email" placeholder="Email..."required />
+                <input className="border rounded-md px-2 py-1" type="email" placeholder="Email..." {...register("email", { required: true })} required />
                 <div className="relative">
-                    <input className="border rounded-md px-2 py-1 w-full"  type={show ? 'text' : 'password'} name="password" placeholder="password" required />
+                    <input className="border rounded-md px-2 py-1 w-full"  type={show ? 'text' : 'password'}  placeholder="password" {...register("password", { required: true })} required />
                     <span className='absolute top-1 right-2 cursor-default text-White' onClick={() => setShow(!show)}>{ show ? "Hide" : "Show"}</span>
                 </div>
                 <p className="text-sm"><NavLink className={'font-medium hover:text-[#4f4f4f]'} to={'/resetpassword'} >Forgot password?</NavLink></p>
