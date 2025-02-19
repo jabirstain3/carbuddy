@@ -1,7 +1,7 @@
-// import { Link } from "react-router";
 import ThemeProvider from "../../theme/Theme";
 import carbuddyLight from "/src/assets/logo/carbuddyLight.png"
 import carbuddyDark from "/src/assets/logo/carbuddyDark.png"
+import Userstatus from "./Userstatus";
 
 const Navbar = () => {
     const manu = <>
@@ -12,6 +12,7 @@ const Navbar = () => {
         <li><a className="hover:bg-scnd hover:text-based active:text-scnd" href="/:userName/Booking" >Bookings</a></li>
         <li><a className="hover:bg-scnd hover:text-based active:text-scnd" href="/contactus" >Contact Us</a></li>
     </>
+
     return (
         <div className="w-11/12 xl:w-10/12 mx-auto navbar px-0">
             <div className="navbar-start ">
@@ -25,8 +26,8 @@ const Navbar = () => {
             </div>
             <div className="navbar-end">
                 <ul className="menu menu-horizontal gap-2 items-center text-based dark:text-basel font-medium text-lg">
-                    <li className="hidden md:inline border rounded-lg"><a className="hover:bg-scnd" href="/login">Log In</a></li>
-                    <li ><ThemeProvider/></li>
+                    <li className="hidden md:inline"><Userstatus/></li>
+                    <li><ThemeProvider/></li> 
                 </ul>
                 <details className="dropdown dropdown-end">
                     <summary tabIndex={0} role="button" className="btn btn-ghost lg:hidden p-3 bg-basel dark:bg-based border rounded-full border-based dark:border-basel hover:bg-scnd dark:hover:bg-scnd">
@@ -36,8 +37,8 @@ const Navbar = () => {
                     </summary>
 
                     <ul tabIndex={0} className="menu dropdown-content font-medium mt-3 bg-acn rounded-box z-[1] w-36 p-2 shadow">
-                        <li><a className="hover:bg-scnd hover:text-based active:text-scnd md:hidden" href="/login" >Log In</a></li>
                         {manu}
+                        <li className=""><Userstatus/></li>
                     </ul>
                 </details>
             </div>

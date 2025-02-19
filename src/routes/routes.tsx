@@ -10,6 +10,7 @@ import User from "../pages/userpage/User";
 import UserInfoLayout from "../components/layout/userinfo/UserInfoLayout";
 import UserManageBookingLayout from "../components/layout/userManageBooking/UserManageBookingLayout";
 import UserManagePaymentLayout from "../components/layout/userManagePayment/UserManagePaymentLayout";
+import Protected from "../components/layout/protectedRoute/Protected";
 
 const router = createBrowserRouter([
     {
@@ -44,7 +45,7 @@ const router = createBrowserRouter([
 
             {
                 path: ":userName",
-                element: <User />,
+                element: (<Protected> <User /> </Protected>) ,
                 children: [
                     {
                         path: "",
@@ -97,7 +98,7 @@ const router = createBrowserRouter([
 
     {
         path: "/admin",
-        element: <App />,
+        element: (<Protected> <App /> </Protected>),
         children: [
             {
                 path: "create",

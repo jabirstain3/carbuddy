@@ -23,3 +23,12 @@ export type TCar ={
     addfeatures: string[],
     isDeleted?: boolean,
 }
+
+// user
+
+export type TUser = {
+    email: string,
+    role: string,
+    iat: number,
+    eat: number,
+}
