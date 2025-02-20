@@ -14,7 +14,7 @@ const Logoutbutton = () => {
     };
 
     return (
-        <button className="border rounded-lg hover:bg-scnd" onClick={handleLogOut}>Log Out</button>
+        <button className="rounded-lg hover:bg-scnd" onClick={handleLogOut}>Log Out</button>
     );
 };
 

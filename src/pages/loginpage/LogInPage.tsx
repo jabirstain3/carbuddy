@@ -36,6 +36,7 @@ const LogInPage: React.FC = () => {
         }))
         navigate(`/${user.email}`);
     }
+    
     return (
         <div className=" w-11/12 xl:w-10/12 mx-auto h-screen flex flex-col justify-center items-center">
             <form className="grid gap-4 w-fit mx-auto my-12 px-20 py-14 rounded-2xl bg-acn shadow-2xl" onSubmit={handleSubmit(onSubmit)}>

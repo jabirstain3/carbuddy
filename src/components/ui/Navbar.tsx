@@ -27,7 +27,7 @@ const Navbar = () => {
             <div className="navbar-end">
                 <ul className="menu menu-horizontal gap-2 items-center text-based dark:text-basel font-medium text-lg">
                     <li className="hidden md:inline"><Userstatus/></li>
-                    <li><ThemeProvider/></li> 
+                    <li className=""><ThemeProvider/></li> 
                 </ul>
                 <details className="dropdown dropdown-end">
                     <summary tabIndex={0} role="button" className="btn btn-ghost lg:hidden p-3 bg-basel dark:bg-based border rounded-full border-based dark:border-basel hover:bg-scnd dark:hover:bg-scnd">
@@ -37,8 +37,8 @@ const Navbar = () => {
                     </summary>
 
                     <ul tabIndex={0} className="menu dropdown-content font-medium mt-3 bg-acn rounded-box z-[1] w-36 p-2 shadow">
+                        <li className="md:hidden w-fit mx-auto "><Userstatus/></li>
                         {manu}
-                        <li className=""><Userstatus/></li>
                     </ul>
                 </details>
             </div>

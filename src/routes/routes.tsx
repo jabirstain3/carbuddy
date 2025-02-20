@@ -11,6 +11,7 @@ import UserInfoLayout from "../components/layout/userinfo/UserInfoLayout";
 import UserManageBookingLayout from "../components/layout/userManageBooking/UserManageBookingLayout";
 import UserManagePaymentLayout from "../components/layout/userManagePayment/UserManagePaymentLayout";
 import Protected from "../components/layout/protectedRoute/Protected";
+import ContactLayout from "../components/layout/contactUs/ContactLayout";
 
 const router = createBrowserRouter([
     {
@@ -29,7 +30,7 @@ const router = createBrowserRouter([
 
             {
                 path: "contactus",
-                element: <App />,
+                element: <ContactLayout/>,
             },
 
             {
