@@ -27,8 +27,23 @@ export type TCar ={
 // user
 
 export type TUser = {
+    id: string, 
+    userName: string,
     email: string,
     role: string,
     iat: number,
-    eat: number,
+    exp: number,
+}
+
+
+// user info
+
+export type TUserDetails = {
+email: string,
+number: string,
+password: string,
+role: string, 
+status: string, 
+username: string,
+_id: string 
 }

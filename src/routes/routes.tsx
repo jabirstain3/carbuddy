@@ -45,11 +45,15 @@ const router = createBrowserRouter([
             },
 
             {
-                path: ":userName",
+                path: "user/:userName",
                 element: (<Protected> <User /> </Protected>) ,
                 children: [
                     {
                         path: "",
+                        element: <UserInfoLayout />,
+                    },
+                    {
+                        path: "info",
                         element: <UserInfoLayout />,
                     },
 

@@ -2,15 +2,17 @@ import ThemeProvider from "../../theme/Theme";
 import carbuddyLight from "/src/assets/logo/carbuddyLight.png"
 import carbuddyDark from "/src/assets/logo/carbuddyDark.png"
 import Userstatus from "./Userstatus";
+import { NavLink } from "react-router-dom";
+
+const NavLinkClass = ({ isActive }: { isActive: boolean }) => `hover:bg-scnd hover:text-based ${isActive? "text-scnd bg-white": ""}` 
 
 const Navbar = () => {
     const manu = <>
-        <li><a className="hover:bg-scnd hover:text-based active:text-scnd" href="/">Home</a></li>
-        {/* <li> <Link to="/about" className="hover:bg-scnd hover:text-based active:text-scnd">About Us</Link></li> */}
-        <li><a className="hover:bg-scnd hover:text-based active:text-scnd" href="/aboutus" >About Us</a></li>
-        <li><a className="hover:bg-scnd hover:text-based active:text-scnd" href="/cars" >Cars</a></li>
-        <li><a className="hover:bg-scnd hover:text-based active:text-scnd" href="/:userName/Booking" >Bookings</a></li>
-        <li><a className="hover:bg-scnd hover:text-based active:text-scnd" href="/contactus" >Contact Us</a></li>
+        <li><NavLink className={NavLinkClass} to="/">Home</NavLink></li>
+        <li><NavLink className={NavLinkClass} to="/aboutus" >About Us</NavLink></li>
+        <li><NavLink className={NavLinkClass} to="/cars" >Cars</NavLink></li>
+        <li><NavLink className={NavLinkClass} to="/user/:userName/Booking" >Bookings</NavLink></li>
+        <li><NavLink className={NavLinkClass} to="/contactus" >Contact Us</NavLink></li>
     </>
 
     return (

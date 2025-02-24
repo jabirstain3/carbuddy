@@ -2,10 +2,11 @@ import { useState } from "react";
 import { NavLink, useNavigate, } from "react-router-dom";
 import { useForm, SubmitHandler } from "react-hook-form"
 import { useLoginMutation } from "../../redux/features/auth/authApi";
-import tokenVerify from "../../utils/tokenVerify";
 import { useAppDispatch } from "../../redux/hooks";
 import { setIUser } from "../../redux/features/auth/authSlice";
 import { TUser } from "../../types";
+import tokenVerify from "../../utils/tokenVerify";
+import Loader from "../../components/ui/Loader";
 
 interface FormData {
     email: string;
@@ -17,16 +18,21 @@ const LogInPage: React.FC = () => {
     const [show, setShow] = useState(false)
     const { register, handleSubmit } = useForm<FormData>()
     const navigate = useNavigate();
-    const [ login ] = useLoginMutation();
+    const [ login, { isLoading }] = useLoginMutation();    
 
     const onSubmit: SubmitHandler<FormData> = async (data) => {
-        console.log(data)
+        // console.log(data)
         const userinfo ={
             email: data.email,
             password: data.password,
         }
 
         const res = await login(userinfo).unwrap();
+
+        if (isLoading) {
+            return <Loader />
+        }
+        
         console.log(res.data);
         const user = tokenVerify(res.data)as TUser;
         console.log(user);
@@ -34,7 +40,7 @@ const LogInPage: React.FC = () => {
             user: user,
             token: res.data,
         }))
-        navigate(`/${user.email}`);
+        navigate(`/user/${user.userName}`);
     }
     
     return (

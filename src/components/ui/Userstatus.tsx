@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { useAppSelector } from "../../redux/hooks";
 import { RootState } from "../../redux/store";
 import Logoutbutton from "../shearedComponent/Logoutbutton";
@@ -22,7 +23,7 @@ const Userstatus: React.FC = () => {
                                 </div>
 
                                 <ul tabIndex={1} className="dropdown-content menu bg-acn rounded-box z-[1] w-36 p-2 shadow">
-                                    <li><a className="hover:bg-scnd hover:text-based active:text-scnd" href="/aboutus" >Profile</a></li>
+                                    <li><Link className="hover:bg-scnd hover:text-based " to={`/user/${isAuthenticated.userName}`} >Profile</Link></li>
                                     <li><Logoutbutton /></li>
                                 </ul>
                             </div>
