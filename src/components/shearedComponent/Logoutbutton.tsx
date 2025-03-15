@@ -1,16 +1,15 @@
-import { useNavigate } from "react-router-dom";
 import { logOutUser } from "../../redux/features/auth/authSlice";
 import { useAppDispatch } from "../../redux/hooks";
+import { useToRoute } from "../../hooks/useToRoute";
 
 
 const Logoutbutton = () => { 
     const dispatch = useAppDispatch();
-    const navigate = useNavigate();
-
+    const goToRoute = useToRoute()
     const handleLogOut = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
         event.preventDefault();
         dispatch(logOutUser());
-        navigate(`/`);
+        goToRoute(`/`);
     };
 
     return (

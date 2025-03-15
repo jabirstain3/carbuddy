@@ -1,8 +1,8 @@
-import { useLocation, useNavigate } from "react-router-dom";
-// import { useState } from "react";
+import { useLocation, } from "react-router-dom";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { useForm, Controller, SubmitHandler } from "react-hook-form";
+import { useToRoute } from "../../../hooks/useToRoute";
 
 type Feature = string;
 
@@ -12,29 +12,13 @@ interface FormData {
 }
 
 const SingalCarLayout = () => {
-  // Car props fetch
   const location = useLocation();
+  const goToRoute = useToRoute()
+
   const { state } = location;
   // console.log(state);
-  const {
-    id,
-    name,
-    image,
-    category,
-    passengers,
-    transmission,
-    luggage,
-    area,
-    price,
-    model,
-    drive,
-    engine,
-    power,
-    fuel,
-    mileage,
-    features,
-    addfeatures,
-  } = state;
+  const { _id:id, name, image, category, passengers, transmission, luggage, area, price, model, drive, engine, power, fuel, mileage, features, addfeatures} = state;
+
 
   const { control, handleSubmit, setValue, watch } = useForm<FormData>({
     defaultValues: {
@@ -42,8 +26,6 @@ const SingalCarLayout = () => {
       pickedFeatures: [],
     },
   });
-
-  const navigate = useNavigate();
 
   const pickedFeatures = watch("pickedFeatures");
 
@@ -61,34 +43,18 @@ const SingalCarLayout = () => {
       carId: id,
       addedFeatures: data.pickedFeatures,
       date: data.selectedDate,
-      carDetails: {
-        name,
-        category,
-        price,
-        model,
-        drive,
-        engine,
-        power,
-        fuel,
-        mileage,
-        transmission,
-        passengers,
-        luggage,
-        area,
-      },
+      carDetails: state,
     };
-
-    navigate(`/user/${userName}/payment`, { state: bookingDetails });
+    // console.log(bookingDetails);
+    goToRoute( `cars/${id}/confirmation`, bookingDetails);
   };
 
-  // Define frozen/unselectable dates
   const frozenDates = [
     new Date(2025, 0, 20),
     new Date(2025, 0, 25),
     new Date(2025, 0, 30),
   ];
 
-  // Function to check if a date should be disabled
   const isDateDisabled = (date: Date) => {
     return frozenDates.some(
       (frozenDate) => frozenDate.toDateString() === date.toDateString()

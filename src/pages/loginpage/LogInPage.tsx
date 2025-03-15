@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { NavLink, useNavigate, } from "react-router-dom";
+import { NavLink, } from "react-router-dom";
 import { useForm, SubmitHandler } from "react-hook-form"
 import { useLoginMutation } from "../../redux/features/auth/authApi";
 import { useAppDispatch } from "../../redux/hooks";
@@ -7,6 +7,7 @@ import { setIUser } from "../../redux/features/auth/authSlice";
 import { TUser } from "../../types";
 import tokenVerify from "../../utils/tokenVerify";
 import Loader from "../../components/ui/Loader";
+import { useToRoute } from "../../hooks/useToRoute";
 
 interface FormData {
     email: string;
@@ -17,7 +18,7 @@ const LogInPage: React.FC = () => {
     const dispatch = useAppDispatch()
     const [show, setShow] = useState(false)
     const { register, handleSubmit } = useForm<FormData>()
-    const navigate = useNavigate();
+    const goToRoute = useToRoute()
     const [ login, { isLoading }] = useLoginMutation();    
 
     const onSubmit: SubmitHandler<FormData> = async (data) => {
@@ -40,7 +41,7 @@ const LogInPage: React.FC = () => {
             user: user,
             token: res.data,
         }))
-        navigate(`/user/${user.userName}`);
+        goToRoute(`/user/${user.userName}`);
     }
     
     return (

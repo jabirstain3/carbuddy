@@ -1,6 +1,7 @@
 import { SubmitHandler, useForm, useWatch } from "react-hook-form";
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { useRegisterUserMutation } from "../../redux/features/user/userApi";
+import { useToRoute } from "../../hooks/useToRoute";
 
 interface FormData {
     name: string;
@@ -13,8 +14,8 @@ interface FormData {
 
 const SignUpPage = () => {
     const { register, handleSubmit, control } = useForm<FormData>()
-    const navigate = useNavigate();
     const [ registerUser ] = useRegisterUserMutation();
+    const goToRoute = useToRoute()
 
     const password = useWatch({ control, name: 'password' });
     const confirmPassword = useWatch({ control, name: 'confirmPassword' });
@@ -32,7 +33,7 @@ const SignUpPage = () => {
         }
 
         await registerUser(userinfo);
-        navigate('/login');
+        goToRoute('/login');
     }
     // const HandelSignUp= ( e: React.FormEvent<HTMLFormElement> ) =>{
     //     e.preventDefault();

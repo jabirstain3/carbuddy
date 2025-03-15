@@ -1,5 +1,5 @@
-import { useNavigate } from "react-router-dom";
 import { TCar } from "../../types";
+import { useToRoute } from "../../hooks/useToRoute";
 
 
 interface CarCardProps {
@@ -8,15 +8,15 @@ interface CarCardProps {
 }
 
 const CarCard: React.FC<CarCardProps> = ( { base, car}) => {
-    const navigate = useNavigate();
+    const goToRoute = useToRoute()
 
     const { _id:id, name, image, category, passengers, transmission, luggage, area, price} = car;
 
     const handalDetails = () => {
         if (base === ""){
-            navigate( id, {state: car} )
+            goToRoute( id, car )
         }
-        else navigate( `${base}/${id}`, {state: car} )
+        else goToRoute( `${base}/${id}`, car )
     }
 
     return (

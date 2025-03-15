@@ -1,4 +1,5 @@
-import { useNavigate } from "react-router";
+
+import { useToRoute } from "../../hooks/useToRoute";
 
 interface ButtonProps {
     btnText: string;
@@ -6,10 +7,10 @@ interface ButtonProps {
 }
 
 const Button: React.FC<ButtonProps> = ({btnText, link}) => {
-    const navigate = useNavigate();
+    const goToRoute = useToRoute()
 
     const handleClick = () => {
-        navigate(link);
+        goToRoute(link);
     };
     
     return (

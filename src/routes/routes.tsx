@@ -12,7 +12,7 @@ import UserManageBookingLayout from "../components/layout/userManageBooking/User
 import UserManagePaymentLayout from "../components/layout/userManagePayment/UserManagePaymentLayout";
 import ContactLayout from "../components/layout/contactUs/ContactLayout";
 import Protected from "../protectedRoute/Protected";
-import PaymentConfirmation from "../components/layout/paymentConfermation/PaymentConfirmation";
+import ConfirmBooking from "../components/layout/confirmBooking/ConfirmBooking";
 
 const router = createBrowserRouter([
     {
@@ -41,8 +41,17 @@ const router = createBrowserRouter([
 
             {
                 path: "cars/:id",
-                element: <SingalCarLayout/>,
-                // loader: ({params}) => fetch(`${baseURL}/coffee/${params.id}`) 
+                children: [
+                    {
+                        path:"",
+                        element: <SingalCarLayout/>,
+                    },
+                    {
+                        path:"confirmation",
+                        element: (<Protected> <ConfirmBooking /> </Protected>),
+                    },
+                ]
+                
             },
 
             {
@@ -65,11 +74,6 @@ const router = createBrowserRouter([
                     {
                         path: "payment",
                         element: <UserManagePaymentLayout />,
-                    },
-
-                    {
-                        path: "payment_confirmation",
-                        element: <PaymentConfirmation/>,
                     },
                 ]
             },
