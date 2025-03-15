@@ -10,8 +10,9 @@ import User from "../pages/userpage/User";
 import UserInfoLayout from "../components/layout/userinfo/UserInfoLayout";
 import UserManageBookingLayout from "../components/layout/userManageBooking/UserManageBookingLayout";
 import UserManagePaymentLayout from "../components/layout/userManagePayment/UserManagePaymentLayout";
-import Protected from "../components/layout/protectedRoute/Protected";
 import ContactLayout from "../components/layout/contactUs/ContactLayout";
+import Protected from "../protectedRoute/Protected";
+import PaymentConfirmation from "../components/layout/paymentConfermation/PaymentConfirmation";
 
 const router = createBrowserRouter([
     {
@@ -49,7 +50,7 @@ const router = createBrowserRouter([
                 element: (<Protected> <User /> </Protected>) ,
                 children: [
                     {
-                        path: "",
+                        path:"",
                         element: <UserInfoLayout />,
                     },
                     {
@@ -61,10 +62,14 @@ const router = createBrowserRouter([
                         path: "booking",
                         element: <UserManageBookingLayout />,
                     },
-
                     {
                         path: "payment",
                         element: <UserManagePaymentLayout />,
+                    },
+
+                    {
+                        path: "payment_confirmation",
+                        element: <PaymentConfirmation/>,
                     },
                 ]
             },

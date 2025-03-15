@@ -33,9 +33,9 @@ const LogInPage: React.FC = () => {
             return <Loader />
         }
         
-        console.log(res.data);
+        // console.log(res.data);
         const user = tokenVerify(res.data)as TUser;
-        console.log(user);
+        // console.log(user);
         dispatch(setIUser({
             user: user,
             token: res.data,
