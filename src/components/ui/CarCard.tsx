@@ -14,7 +14,7 @@ const CarCard: React.FC<CarCardProps> = ( { base, car}) => {
 
     const handalDetails = () => {
         if (base === ""){
-            goToRoute( id, car )
+            goToRoute( `${id}`, car )
         }
         else goToRoute( `${base}/${id}`, car )
     }

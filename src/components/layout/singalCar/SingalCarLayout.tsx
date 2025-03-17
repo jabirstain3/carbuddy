@@ -46,7 +46,7 @@ const SingalCarLayout = () => {
       carDetails: state,
     };
     // console.log(bookingDetails);
-    goToRoute( `cars/${id}/confirmation`, bookingDetails);
+    goToRoute( `confirmation`, bookingDetails);
   };
 
   const frozenDates = [

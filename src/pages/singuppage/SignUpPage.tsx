@@ -35,24 +35,6 @@ const SignUpPage = () => {
         await registerUser(userinfo);
         goToRoute('/login');
     }
-    // const HandelSignUp= ( e: React.FormEvent<HTMLFormElement> ) =>{
-    //     e.preventDefault();
-    //     // console.log(e);
-
-    //     const target = e.target as typeof e.target & {
-    //         email: { value: string };
-    //         password: { value: string };
-    //         name: { value: string };
-    //         phonenumber: { value: string };
-    //     };
-
-    //     const name = target.name.value;
-    //     const email = target.email.value;
-    //     const password = target.password.value;
-    //     const phone = target.phonenumber?.value;
-    //     const user = {name, email, password, phone};
-    //     console.log(user);
-    // }
 
     return (
         <div className=" w-11/12 xl:w-10/12 h-screen mx-auto flex flex-col justify-center items-center">

@@ -6,7 +6,7 @@ export const useToRoute = () => {
     const goToRoute = (path: string, stateObj: object = {}) => {
 
 
-        navigate(`/${path}`, { state: stateObj });
+        navigate(`${path}`, { state: stateObj });
     };
 
     return goToRoute;

@@ -7,7 +7,7 @@ const Protected = ({ children }: {children: ReactNode}) => {
     const token = useAppSelector(useCurrentToken);
 
     if(!token) {
-        console.log("no access!");
+        // console.log("no access!");
         return <Navigate to="/login"  replace={true}/>;
         
     }

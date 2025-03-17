@@ -20,7 +20,7 @@ const UserInfoLayout: React.FC = () => {
     }
 
     const { data: UserData } = data;
-    console.log(UserData);
+    // console.log(UserData);
 
     const { username, _id:id, number, } = UserData as TUserDetails
     return (
