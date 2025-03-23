@@ -1,4 +1,3 @@
-
 import { useGetUserDataQuery } from "../../../redux/features/user/userApi";
 import { useAppSelector } from "../../../redux/hooks";
 import { RootState } from "../../../redux/store";

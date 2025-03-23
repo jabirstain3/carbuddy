@@ -17,7 +17,7 @@ const SingalCarLayout = () => {
 
   const { state } = location;
   // console.log(state);
-  const { _id:id, name, image, category, passengers, transmission, luggage, area, price, model, drive, engine, power, fuel, mileage, features, addfeatures} = state;
+  const { name, image, category, passengers, transmission, luggage, area, price, model, drive, engine, power, fuel, mileage, features, addfeatures} = state;
 
 
   const { control, handleSubmit, setValue, watch } = useForm<FormData>({
@@ -38,11 +38,19 @@ const SingalCarLayout = () => {
     );
   };
 
+  const generateBookingId = () => {
+    const array = new Uint8Array(12);
+    crypto.getRandomValues(array);
+    return Array.from(array, byte => byte.toString(16).padStart(2, '0')).join('').slice(0, 12);
+};
+
   const onSubmit: SubmitHandler<FormData> = (data) => {
+    generateBookingId();
+
     const bookingDetails = {
-      carId: id,
+      bookingId: generateBookingId(),
       addedFeatures: data.pickedFeatures,
-      date: data.selectedDate,
+      // date: data.selectedDate,
       carDetails: state,
     };
     // console.log(bookingDetails);
@@ -182,15 +190,15 @@ const SingalCarLayout = () => {
                 filterDate={(date) => !isDateDisabled(date)}
                 placeholderText="yyyy-MM-dd"
                 dateFormat="yyyy-MM-dd"
-                className="border rounded-lg p-2 text-base text-based"
+                className="border rounded-lg p-2 text-base text-based dark:bg-acn dark:text-basel"
               />
             )}
           />
-          {/* {selectedDate && (
-            <p>
-              Selected Date: <strong>{selectedDate.toDateString()}</strong>
+          {watch("selectedDate") && (
+            <p className="text-lg mt-4">
+              Selected Date: <strong>{watch("selectedDate")?.toDateString()}</strong>
             </p>
-          )} */}
+          )}
         </div>
 
         <button
