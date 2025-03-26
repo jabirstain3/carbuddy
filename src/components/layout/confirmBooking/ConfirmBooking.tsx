@@ -1,5 +1,6 @@
 import { useLocation } from "react-router-dom";
 import { useToProtectedRoute } from "../../../hooks/useToProtectedRoute";
+import BookingStatus from "../../ui/BookingStatus";
 
 const ConfirmBooking = () => {
     const location = useLocation();
@@ -9,23 +10,19 @@ const ConfirmBooking = () => {
 
     const { bookingId, addedFeatures, carDetails } = state;
 
-    const status = {
-        title: "Processing Booking",
-        message: "Confirming your ride with the car owner, please wait!",
-        color: "#f4842e",
-    };
+    const status = BookingStatus('9001')
 
     return (
         <section className="bg-gray-100 container mx-auto px-4 py-12">
             <div className="max-w-4xl mx-auto">
                 {/* Confirmation status bar */}
-                <div className="shadow-lg rounded-lg p-8 mb-8 border-l-4 dark:bg-acn" style={{ borderColor: status.color }}>
+                <div className="shadow-lg rounded-lg p-8 mb-8 border-l-4 dark:bg-acn" style={{ borderColor: status.borderColor }}>
                     <div className="flex items-center justify-between flex-wrap gap-4">
                         <div className="flex items-center">
                             {/* <CheckCircle className="text-green-500 mr-4" size={32} /> */}
                             <div>
-                                <h1 className="text-3xl font-bold" style={{ color: status.color }}>{status.title}</h1>
-                                <p className="text-neutral-600">{status.message}</p>
+                                <h1 className="text-3xl font-bold" style={{ color: status.textColor }}>{status.title}</h1>
+                                <p className="text-neutral-600" style={{ color: status.color }}>{status.message}</p>
                             </div>
                         </div>
 

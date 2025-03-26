@@ -47,3 +47,45 @@ status: string,
 username: string,
 _id: string 
 }
+
+// booking
+export type TBooking = {
+    booking_id: string;
+    user:{
+        id: string;
+        email?: string;
+        username?: string;
+    }
+    car: {
+        id: string;
+        name: string;
+        image: string;
+        category: string;
+        AditionalFeatures: string[];
+    };
+    statusCode: string;
+    rentalinfo: {
+        pickup: string;
+        return?: string;
+        location: string;
+    };
+    totalAmount: number;
+    createdAt: string;
+    aprovedAt?: string;
+    confirmedAt?: string;
+    canceledAt?: string;
+}
+
+// booking status
+export type TBookingStatus = {
+    title: string;
+    message: string;
+    color: string;
+    textColor: string;
+    borderColor: string;
+}
+
+//  booking card
+export type TBookingCardProps = {
+    booking: TBooking;
+}
