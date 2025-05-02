@@ -9,14 +9,14 @@ export const CarShowcase = () => {
     const [carOffset, setCarOffset ] = useState(0);
     
     const { data, isLoading } = useGetAllCarsQuery({})
-    // console.log(data);
+    // cout(data);
 
     if( isLoading){
         return <Loader/>
     }
 
     const { data: allCars } = data
-    // console.log(allCars);
+    // cout(allCars);
     
 
     const maxCars = 12;

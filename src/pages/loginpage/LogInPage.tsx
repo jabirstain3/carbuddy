@@ -22,7 +22,7 @@ const LogInPage: React.FC = () => {
     const [ login, { isLoading }] = useLoginMutation();    
 
     const onSubmit: SubmitHandler<FormData> = async (data) => {
-        // console.log(data)
+        // cout(data)
         const userinfo ={
             email: data.email,
             password: data.password,
@@ -34,9 +34,9 @@ const LogInPage: React.FC = () => {
             return <Loader />
         }
         
-        // console.log(res.data);
+        // cout(res.data);
         const user = tokenVerify(res.data)as TUser;
-        // console.log(user);
+        // cout(user);
         dispatch(setIUser({
             user: user,
             token: res.data,

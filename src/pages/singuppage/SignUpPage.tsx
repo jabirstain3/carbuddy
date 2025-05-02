@@ -21,7 +21,7 @@ const SignUpPage = () => {
     const confirmPassword = useWatch({ control, name: 'confirmPassword' });
 
     const onSubmit: SubmitHandler<FormData> = async (data) => {
-        console.log(data)
+        cout(data)
 
 
         const userinfo ={

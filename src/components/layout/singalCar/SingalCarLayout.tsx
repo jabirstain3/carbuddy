@@ -3,6 +3,8 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { useForm, Controller, SubmitHandler } from "react-hook-form";
 import { useToRoute } from "../../../hooks/useToRoute";
+import { useAppDispatch } from "../../../redux/hooks";
+import { setBoohking } from "../../../redux/features/booking/bookingsSlice";
 
 type Feature = string;
 
@@ -12,11 +14,12 @@ interface FormData {
 }
 
 const SingalCarLayout = () => {
+  const dispatch = useAppDispatch();
   const location = useLocation();
   const goToRoute = useToRoute()
 
   const { state } = location;
-  // console.log(state);
+  // cout(state);
   const { name, image, category, passengers, transmission, luggage, area, price, model, drive, engine, power, fuel, mileage, features, addfeatures} = state;
 
 
@@ -48,12 +51,19 @@ const SingalCarLayout = () => {
     generateBookingId();
 
     const bookingDetails = {
-      bookingId: generateBookingId(),
+      booking_id: generateBookingId(),
       addedFeatures: data.pickedFeatures,
-      // date: data.selectedDate,
       carDetails: state,
+      // date: data.selectedDate,
+      rentalinfo:{ 
+        pickup: data.selectedDate?.toDateString()
+      },
+      createdAt: new Date().toDateString(),
     };
-    // console.log(bookingDetails);
+    // cout(bookingDetails);
+
+    dispatch(setBoohking({ booking: bookingDetails }));
+
     goToRoute( `confirmation`, bookingDetails);
   };
 

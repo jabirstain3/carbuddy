@@ -6,20 +6,20 @@ import Loader from "../../ui/Loader";
 
 const UserInfoLayout: React.FC = () => {
     const user = useAppSelector((state: RootState) => state.auth.user);
-    // console.log( user );
+    // cout( user );
     
     const userId = user?.id
-    // console.log(userId);
+    // cout(userId);
     
     const { data, isLoading } = useGetUserDataQuery( userId!, { skip: !userId, } );
-    // console.log(data);
+    // cout(data);
 
     if( isLoading){
         return <Loader/>
     }
 
     const { data: UserData } = data;
-    // console.log(UserData);
+    // cout(UserData);
 
     const { username, _id:id, number, } = UserData as TUserDetails
     return (

@@ -3,21 +3,25 @@ import { NavLink } from "react-router-dom";
 import BookingStatus from "./BookingStatus";
 
 const BookingCard = ( {booking}: TBookingCardProps ) => {
-    // console.log(booking);
+    // cout(booking);
     
     const formatDate = (dateString: string) => {
+        if (!dateString) return "N/A"; 
+
         const date = new Date(dateString);
+        
+        if (isNaN(date.getTime())) return "N/A";
+
         return new Intl.DateTimeFormat("en-US", {
+            weekday: "short",
             month: "short",
             day: "numeric",
             year: "numeric",
-            hour: "numeric",
-            minute: "numeric",
         }).format(date);
     };
 
     const status = BookingStatus(booking.statusCode)
-    // console.log(status);
+    // cout(status);
     
     const isModifiable = booking.statusCode === "9001" || booking.statusCode === "9006" || booking.statusCode === "9003"
 
@@ -29,15 +33,15 @@ const BookingCard = ( {booking}: TBookingCardProps ) => {
                 <div className="flex items-start gap-4 mb-5">
                     {/* Image */}
                     <div className="flex-shrink-0 flex justify-center items-center rounded-lg overflow-hidden shadow-sm border-neutral-200">
-                        <img src={booking.car.image} alt={booking.car.name} className="rounded-lg object-cover w-full max-w-[120px] aspect-[4/3]" />
+                        <img src={booking.carDetails.image} alt={booking.carDetails.name} className="rounded-lg object-cover w-full max-w-[120px] aspect-[4/3]" />
                     </div>
         
                     {/* Name and Status */}
                     <div className="flex-1">
                         <div className="flex flex-wrap justify-between items-start">
                             <div>
-                                <h2 className="text-lg font-bold text-based dark:text-basel">{booking.car.name}</h2>
-                                <p className="text-neutral-500 text-sm mb-2">{booking.car.category}</p>
+                                <h2 className="text-lg font-bold text-based dark:text-basel">{booking.carDetails.name}</h2>
+                                <p className="text-neutral-500 text-sm mb-2">{booking.carDetails.category}</p>
                             </div>
 
                             <div className="flex items-center mt-2">
@@ -103,7 +107,6 @@ const BookingCard = ( {booking}: TBookingCardProps ) => {
                             className="inline-flex items-center px-4 py-2 border text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
                         >
                             View Details
-                            {/* <ChevronRight className="ml-1" size={16} /> */}
                         </NavLink>
                     </div>
             </div>
@@ -116,7 +119,7 @@ const BookingCard = ( {booking}: TBookingCardProps ) => {
                     {/* Image */}
                     <div className="col-span-2">
                         <div className="rounded-lg overflow-hidden shadow-sm">
-                            <img src={booking.car.image} alt={booking.car.name} className="rounded-lg object-cover w-full max-w-[180px] aspect-square lg:aspect-[4/3]" />
+                            <img src={booking.carDetails.image} alt={booking.carDetails.name} className="rounded-lg object-cover w-full max-w-[180px] aspect-square lg:aspect-[4/3]" />
                         </div>
                     </div>
 
@@ -124,8 +127,8 @@ const BookingCard = ( {booking}: TBookingCardProps ) => {
                     <div className="col-span-3">
                         <div className="flex flex-col h-full justify-start">
                             <div>
-                                <h2 className="text-lg font-bold text-based dark:text-basel">{booking.car.name}</h2>
-                                <p className="text-neutral-500 text-sm mb-2">{booking.car.category}</p>
+                                <h2 className="text-lg font-bold text-based dark:text-basel">{booking.carDetails.name}</h2>
+                                <p className="text-neutral-500 text-sm mb-2">{booking.carDetails.category}</p>
                             </div>
 
                             <div className="flex items-center mt-2">
@@ -139,7 +142,6 @@ const BookingCard = ( {booking}: TBookingCardProps ) => {
                     <div className="col-span-3">
                         <div className="flex flex-col h-full justify-start">
                             <div className="flex items-center text-neutral-700 mb-1">
-                                {/* <Calendar className="text-blue-600 mr-1" size={14} /> */}
                                 <span className="text-xs font-medium">Pickup</span>
                             </div>
 
@@ -151,7 +153,6 @@ const BookingCard = ( {booking}: TBookingCardProps ) => {
                     <div className="col-span-3">
                         <div className="flex flex-col h-full justify-start">
                             <div className="flex items-center text-neutral-700 mb-1">
-                            {/* <MapPin className="text-blue-600 mr-1" size={14} /> */}
                             <span className="text-xs font-medium">Location</span>
                             </div>
 
@@ -196,7 +197,6 @@ const BookingCard = ( {booking}: TBookingCardProps ) => {
                                 className="inline-flex items-center px-4 py-2 border text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
                             >
                                 View Details
-                                {/* <ChevronRight className="ml-1" size={16} /> */}
                             </NavLink>
                         </div>
                     </div>

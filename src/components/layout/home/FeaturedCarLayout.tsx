@@ -12,7 +12,7 @@ const FeaturedCarLayout = () => {
 
     const action = () => {
         
-        // console.log(data);
+        // cout(data);
 
         if (isLoading){
             return <Loader/>

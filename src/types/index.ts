@@ -56,7 +56,7 @@ export type TBooking = {
         email?: string;
         username?: string;
     }
-    car: {
+    carDetails: {
         id: string;
         name: string;
         image: string;

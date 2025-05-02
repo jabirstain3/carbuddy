@@ -6,7 +6,7 @@ const ConfirmBooking = () => {
     const location = useLocation();
     const ToProtectedRoute = useToProtectedRoute()
     const { state } = location;
-    console.log(state);
+    // cout(state);
 
     const { bookingId, addedFeatures, carDetails } = state;
 
